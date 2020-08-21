@@ -15,7 +15,10 @@
       icon: {},
       iconPosition: {
         type: String,
-        default: 'left'
+        default: 'left',
+        validator(iconPosition) {
+          return !(iconPosition !== 'left' && iconPosition !== 'right');
+        }
       }
     }
   }
