@@ -26,6 +26,7 @@
         justify-content: center;
         align-items: center;
         vertical-align: middle;
+
         &:hover {
             border-color: var(--border-color-hover);
         }
@@ -37,6 +38,8 @@
         }
         > .icon{
             order: 1;
+            margin-left: 0;
+            margin-right: 0.1em;
         }
         > .content{
             order: 2;
@@ -44,6 +47,8 @@
         &.icon-right{
             > .icon{
                 order: 2;
+                margin-right: 0;
+                margin-left: 0.1em;
             }
             > .content{
                 order: 1;
