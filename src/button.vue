@@ -4,14 +4,20 @@
             <use :xlink:href=`#icon-${icon}`></use>
         </svg>
         <div class="content">
-        <slot></slot>
+            <slot></slot>
         </div>
     </button>
 
 </template>
 <script>
   export default {
-    props:['icon','iconPosition']
+    props: {
+      icon: {},
+      iconPosition: {
+        type: String,
+        default: 'left'
+      }
+    }
   }
 </script>
 <style lang="scss">
@@ -30,27 +36,33 @@
         &:hover {
             border-color: var(--border-color-hover);
         }
+
         &:active {
             background-color: var(--button-active-bg);
         }
+
         &:focus {
             outline: none;
         }
-        > .icon{
+
+        > .icon {
             order: 1;
             margin-left: 0;
             margin-right: 0.1em;
         }
-        > .content{
+
+        > .content {
             order: 2;
         }
-        &.icon-right{
-            > .icon{
+
+        &.icon-right {
+            > .icon {
                 order: 2;
                 margin-right: 0;
                 margin-left: 0.1em;
             }
-            > .content{
+
+            > .content {
                 order: 1;
             }
         }
