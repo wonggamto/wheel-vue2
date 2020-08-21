@@ -1,14 +1,20 @@
 <template>
-    <button class="g-button">
+    <button class="g-button" v-if="!iconPosition || iconPosition === 'left'">
+        <svg v-if="icon" class="icon">
+            <use :xlink:href=`#icon-${icon}`></use>
+        </svg>
         <slot></slot>
-        <svg class="icon">
+    </button>
+    <button class="g-button" v-else>
+        <slot></slot>
+        <svg v-if="icon" class="icon">
             <use :xlink:href=`#icon-${icon}`></use>
         </svg>
     </button>
 </template>
 <script>
   export default {
-    props:['icon']
+    props:['icon','iconPosition']
   }
 </script>
 <style lang="scss">
