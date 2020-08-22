@@ -36,9 +36,9 @@
 </head>
 <body>
 <div id="app">
-    <g-button>无icon按钮</g-button>
-    <g-button icon="setting" icon-position="left">按钮</g-button>
-    <g-button icon="setting" icon-position="right">按钮</g-button>
+    <g-button :loading="loading1" @click="loading1 = !loading1">无icon按钮</g-button>
+    <g-button icon="setting" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+    <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
     <g-icon name="loading"></g-icon>
     <g-icon name="Clouddownload"></g-icon>
     <g-icon name="left"></g-icon>
