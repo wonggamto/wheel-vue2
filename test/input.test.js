@@ -74,6 +74,6 @@ describe('Input', () => {
         inputElement.dispatchEvent(event)
         expect(callback).to.have.been.calledWith(event)
       })
-    })
+    }) 
   })
 })
