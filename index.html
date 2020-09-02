@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轱辘</title>
     <style>
+        img {max-width: 100%;}
+
         * {
             margin: 0;
             padding: 0;
@@ -34,15 +36,15 @@
         }
     </style>
     <style>
-        .box{
+        .box {
             margin: 20px;
         }
     </style>
 </head>
 <body>
+
 <div id="app">
     <div style="border: 1px solid black;">
-
         <g-row gutter="20">
             <g-col>1</g-col>
             <g-col>2</g-col>
@@ -85,14 +87,14 @@
     <hr>
 
     <div class="box">
-    <g-button :loading="loading1" @click="loading1 = !loading1">无icon按钮</g-button>
-    <g-button icon="setting" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
-    <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
-    <g-button-group>
-        <g-button icon="left" icon-position="left">上一页</g-button>
-        <g-button>更多</g-button>
-        <g-button icon="right" icon-position="right">下一页</g-button>
-    </g-button-group>
+        <g-button :loading="loading1" @click="loading1 = !loading1">无icon按钮</g-button>
+        <g-button icon="setting" icon-position="left" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+        <g-button icon="setting" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</g-button>
+        <g-button-group>
+            <g-button icon="left" icon-position="left">上一页</g-button>
+            <g-button>更多</g-button>
+            <g-button icon="right" icon-position="right">下一页</g-button>
+        </g-button-group>
     </div>
     <div class="box">
         <g-input style="margin: 20px;" value="张三"></g-input>
@@ -100,7 +102,7 @@
         <g-input style="margin: 20px;" value="王五" readonly></g-input>
     </div>
     <div class="box">
-        <g-input style="margin: 20px;" value="赵" ></g-input>
+        <g-input style="margin: 20px;" value="赵"></g-input>
     </div>
     <div class="box">
         <g-input style="margin: 20px;" value="赵" error="姓名不能少于两个字"></g-input>
