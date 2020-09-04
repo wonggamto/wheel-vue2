@@ -3,7 +3,11 @@
         <slot></slot>
     </div>
 </template>
-<script></script>
+<script>
+    export default {
+      name:'GuluSider',
+    }
+</script>
 <style lang="scss" scoped>
     .sider{}
 </style>
