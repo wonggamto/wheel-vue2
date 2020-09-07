@@ -35,6 +35,10 @@ new Vue({
   },
 
   created() {
+    this.$toast('很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字很多文字',
+      {
+        enableHtml: false
+      })
   },
   methods:{
     showToast(){
