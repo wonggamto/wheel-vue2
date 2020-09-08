@@ -35,22 +35,22 @@ new Vue({
   },
 
   created() {
-    this.$toast('提示', {
-      position:'middle',
-      enableHtml:false,
-      closeButton:{
-        text:'close',
-        callback(){
-          console.log('已关闭')
-        }
-      },
-      autoClose: true,
-      autoCloseDelay: 3
-    })
+
   },
   methods:{
     showToast(){
-      this.$toast('我是message')
+      this.$toast(`提示${parseInt(Math.random()*100)}`, {
+        position:'middle',
+        enableHtml:false,
+        closeButton:{
+          text:'close',
+          callback(){
+            console.log('已关闭')
+          }
+        },
+        autoClose: true,
+        autoCloseDelay: 3
+      })
     }
   }
 })
