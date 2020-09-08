@@ -69,7 +69,9 @@
       },
       close() {
         this.$el.remove()
+        this.$emit('close')
         this.$destroy()
+
       },
       onClickClose() {
         this.close()
@@ -85,7 +87,13 @@
     $font-size: 14px;
     $toast-min-height: 40px;
     $toast-bg: rgba(0, 0, 0, 0.75);
+    @keyframes fade-in {
+        0%{opacity: 0;transform: translateY(100%)}
+        50%{opacity: .5;transform: translateY(0%)}
+        100%{opacity: 1}
+    }
     .toast {
+        animation: fade-in 1s linear;
         font-size: $font-size;
         line-height: 1.8;
         min-height: $toast-min-height;
