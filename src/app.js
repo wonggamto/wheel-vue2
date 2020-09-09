@@ -81,7 +81,7 @@ new Vue({
         autoCloseDelay: 3
       })
     },
-    showToast(){
+    showToast(position){
       this.$toast(`提示${parseInt(Math.random()*100)}`, {
         position:'middle',
         enableHtml:false,
@@ -91,8 +91,7 @@ new Vue({
             console.log('已关闭')
           }
         },
-        autoClose: true,
-        autoCloseDelay: 3
+        autoClose: 3,
       })
     }
   }
