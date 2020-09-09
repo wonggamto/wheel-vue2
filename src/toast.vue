@@ -63,7 +63,6 @@
       },
       updateStyles() {
         this.$nextTick(() => {
-          console.log(this.$refs.toast.getBoundingClientRect().height)
           this.$refs.line.style.height =
             `${this.$refs.toast.getBoundingClientRect().height}px`
         })
