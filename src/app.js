@@ -38,6 +38,49 @@ new Vue({
 
   },
   methods:{
+    showToast3(){
+      this.$toast(`Bottom${parseInt(Math.random()*100)}`, {
+        position:'bottom',
+        enableHtml:false,
+        closeButton:{
+          text:'close',
+          callback(){
+            console.log('已关闭')
+          }
+        },
+        autoClose: true,
+        autoCloseDelay: 3
+      })
+    }
+    ,
+    showToast2(){
+      this.$toast(`Middle${parseInt(Math.random()*100)}`, {
+        position:'middle',
+        enableHtml:false,
+        closeButton:{
+          text:'close',
+          callback(){
+            console.log('已关闭')
+          }
+        },
+        autoClose: true,
+        autoCloseDelay: 3
+      })
+    },
+    showToast1(){
+      this.$toast(`Top${parseInt(Math.random()*100)}`, {
+        position:'top',
+        enableHtml:false,
+        closeButton:{
+          text:'close',
+          callback(){
+            console.log('已关闭')
+          }
+        },
+        autoClose: true,
+        autoCloseDelay: 3
+      })
+    },
     showToast(){
       this.$toast(`提示${parseInt(Math.random()*100)}`, {
         position:'middle',
