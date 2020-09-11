@@ -38,7 +38,7 @@ Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
-    selectedTab:'item11'
+    selectedTab:'cartoon'
   },
 
   created() {
