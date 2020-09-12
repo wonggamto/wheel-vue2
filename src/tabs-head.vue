@@ -12,7 +12,10 @@
     name: 'GuluTabsHead',
     inject: ['eventBus'],
     created() {
-      this.eventBus.$on('update:selected',(vm,item)=>{
+      this.eventBus.$on('update:selected',(item)=>{
+        // let{width,height,top,left} = vm.$el.getBoundingClientRect()
+        // console.log(width, height, top, left)
+        console.log(item)
       })
     }
   }
