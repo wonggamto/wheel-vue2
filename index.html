@@ -37,34 +37,21 @@
 
 </head>
 <body>
-<div id="app">
-    <g-tabs :selected.sync="selectedTab" >
-        <g-tabs-head>
-            <template slot="actions">
-                <button>设置</button>
-            </template>
-            <g-tabs-item name="cartoon">
-                <g-icon name="setting"></g-icon>动漫
-            </g-tabs-item>
-            <g-tabs-item name="cars" disabled>
-                汽车
-            </g-tabs-item>
-            <g-tabs-item name="sports">
-                运动
-            </g-tabs-item>
-        </g-tabs-head>
-        <g-tabs-body>
-            <g-tabs-pane name="cartoon">
-                动漫内容
-            </g-tabs-pane>
-            <g-tabs-pane name="cars">
-                汽车内容
-            </g-tabs-pane>
-            <g-tabs-pane name="sports">
-                运动内容
-            </g-tabs-pane>
-        </g-tabs-body>
-    </g-tabs>
+<div id="app" style="padding-top: 100px;padding-left: 100px">
+    <g-popover>
+        <template slot="content">
+            <div>popover内容1</div>
+        </template>
+        <div></div>
+            <button>点我</button>
+    </g-popover>
+    <g-popover>
+        <template slot="content">
+            <div>popover内容2</div>
+        </template>
+        <div></div>
+        <button>点我</button>
+    </g-popover>
 </div>
 <script src="./src/app.js"></script>
 </body>
