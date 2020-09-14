@@ -47,6 +47,9 @@ new Vue({
 
   },
   methods:{
+    yyy(){
+      console.log('yyy')
+    },
     showToast3(){
       this.$toast(`Bottom${parseInt(Math.random()*100)}`, {
         position:'bottom',
