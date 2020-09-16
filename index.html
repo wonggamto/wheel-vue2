@@ -2,12 +2,15 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>轱辘</title>
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box;}
+
         img {max-width: 100%;}
+
         html {
             --button-height: 32px;
             --font-size: 14px;
@@ -18,8 +21,10 @@
             --border-color: #999;
             --border-color-hover: #666;
         }
+
         #app {
         }
+
         body {
             font-size: var(--font-size);
         }
@@ -29,15 +34,16 @@
 
 <div id="app">
 
-    <div style="overflow:hidden; padding: 50px;">
+    <div style="overflow:hidden; padding: 100px;">
         <g-popover position="bottom">
-            <template slot="content">
+            <template slot="content" slot-scope="{close}">
                 <div><a href="http://www.baidu.com">baidu</a></div>
+                <g-button @click="close">关闭</g-button>
             </template>
             <g-button>下弹框</g-button>
         </g-popover>
         <g-popover position="top">
-            <template slot="content">
+            <template slot="content" slot-scope="{close}">
                 <div>popover内容</div>
             </template>
             <g-button>上弹框</g-button>
