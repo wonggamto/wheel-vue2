@@ -33,4 +33,24 @@ describe('Popover', () => {
         done()
       })
   })
+  xit('可以设置trigger',(done)=>{
+    div.innerHTML = `
+      <g-popover position="bottom" ref="a">
+        <template slot="content">
+                弹出内容
+        </template>
+        <button>点我</button>
+      </g-popover>
+    `
+    const vm = new Vue({
+      el: div
+    })
+    let event = newEvent('mouseenter')
+    vm.$el.dispatchEvent(event)
+    vm.$nextTick(() => {
+      const {contentWrapper} = vm.$refs.a.$refs
+      expect(contentWrapper).to.exit
+      done()
+    })
+  })
 })
