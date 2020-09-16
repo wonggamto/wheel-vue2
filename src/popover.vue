@@ -13,42 +13,46 @@
 <script>
   export default {
     name: "GuluPopover",
-    data () {
+    data() {
       return {visible: false}
     },
     props: {
       position: {
         type: String,
         default: 'top',
-        validator (value) {
+        validator(value) {
           return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0
         }
       }
     },
     methods: {
-      positionContent () {
+      positionContent() {
         const {contentWrapper, triggerWrapper} = this.$refs
         document.body.appendChild(contentWrapper)
-        let {width, height, top, left} = triggerWrapper.getBoundingClientRect()
-        if (this.position === 'top') {
-          contentWrapper.style.left = left + window.scrollX + 'px'
-          contentWrapper.style.top = top + window.scrollY + 'px'
-        } else if (this.position === 'bottom') {
-          contentWrapper.style.left = left + window.scrollX + 'px'
-          contentWrapper.style.top = top + height + window.scrollY + 'px'
-        } else if (this.position === 'left') {
-          contentWrapper.style.left = left + window.scrollX + 'px'
-          let {height: height2} = contentWrapper.getBoundingClientRect()
-          contentWrapper.style.top = top + window.scrollY +
-            (height - height2) / 2 + 'px'
-        } else if (this.position === 'right') {
-          contentWrapper.style.left = left + window.scrollX + width + 'px'
-          let {height: height2} = contentWrapper.getBoundingClientRect()
-          contentWrapper.style.top = top + window.scrollY +
-            (height - height2) / 2 + 'px'
+        const {height: height2} = contentWrapper.getBoundingClientRect()
+        const {width, height, top, left} = triggerWrapper.getBoundingClientRect()
+        let positions = {
+          top: {top: top + window.scrollY,
+            left:  left + window.scrollX},
+          bottom: {
+            top: top + height + window.scrollY,
+            left: left + window.scrollX
+          },
+          left:{
+            top:top + window.scrollY + (height - height2) / 2,
+            left:left + window.scrollX
+          },
+          right:{
+            top:top + window.scrollY + (height - height2) / 2,
+            left:left + window.scrollX + width
+          }
         }
+        contentWrapper.style.left = positions[this.position].left + 'px'
+        contentWrapper.style.top = positions[this.position].top + 'px'
+        contentWrapper.style.bottom = positions[this.position].bottom + 'px'
+        contentWrapper.style.right = positions[this.position].right + 'px'
       },
-      onClickDocument (e) {
+      onClickDocument(e) {
         if (this.$refs.popover &&
           (this.$refs.popover === e.target || this.$refs.popover.contains(e.target))
         ) { return }
@@ -57,18 +61,18 @@
         ) { return }
         this.close()
       },
-      open () {
+      open() {
         this.visible = true
         this.$nextTick(() => {
           this.positionContent()
           document.addEventListener('click', this.onClickDocument)
         })
       },
-      close () {
+      close() {
         this.visible = false
         document.removeEventListener('click', this.onClickDocument)
       },
-      onClick (event) {
+      onClick(event) {
         if (this.$refs.triggerWrapper.contains(event.target)) {
           if (this.visible === true) {
             this.close()
@@ -90,6 +94,7 @@
         vertical-align: top;
         position: relative;
     }
+
     .content-wrapper {
         position: absolute;
         border: 1px solid $border-color;
@@ -99,6 +104,7 @@
         padding: .5em 1em;
         max-width: 20em;
         word-break: break-all;
+
         &::before, &::after {
             content: '';
             display: block;
@@ -107,61 +113,77 @@
             height: 0;
             position: absolute;
         }
+
         &.position-top {
             transform: translateY(-100%);
             margin-top: -10px;
+
             &::before, &::after {
                 left: 10px;
             }
+
             &::before {
                 border-top-color: black;
                 top: 100%;
             }
+
             &::after {
                 border-top-color: white;
                 top: calc(100% - 1px);
             }
         }
+
         &.position-bottom {
             margin-top: 10px;
+
             &::before, &::after {
                 left: 10px;
             }
+
             &::before {
                 border-bottom-color: black;
                 bottom: 100%;
             }
+
             &::after {
                 border-bottom-color: white;
                 bottom: calc(100% - 1px);
             }
         }
+
         &.position-left {
             transform: translateX(-100%);
             margin-left: -10px;
+
             &::before, &::after {
                 transform: translateY(-50%);
                 top: 50%;
             }
+
             &::before {
                 border-left-color: black;
                 left: 100%;
             }
+
             &::after {
                 border-left-color: white;
                 left: calc(100% - 1px);
             }
         }
+
         &.position-right {
             margin-left: 10px;
+
             &::before, &::after {
                 transform: translateY(-50%);
                 top: 50%;
             }
+
             &::before {
                 border-right-color: black;
                 right: 100%;
             }
+
             &::after {
                 border-right-color: white;
                 right: calc(100% - 1px);
