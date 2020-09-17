@@ -46,7 +46,11 @@ new Vue({
   data: {
     selectedTab:['2','1']
   },
-
+  props:{
+    value:{
+      type:String
+    }
+  },
   created() {
 
   },

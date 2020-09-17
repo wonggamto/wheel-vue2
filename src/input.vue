@@ -4,8 +4,7 @@
         @change="$emit('change',$event.target.value)"
         @input="$emit('input',$event.target.value)"
         @focus="$emit('focus',$event.target.value)"
-        @blur="$emit('blur',$event.target.value)"
-        />
+        @blur="$emit('blur',$event.target.value)"/>
         <template v-if="error">
             <icon name="error" class="icon-error"></icon>
             <span class="error-message">{{error}}</span>
@@ -44,6 +43,7 @@
     $font-size: 12px;
     $box-shadow-color: rgba(0, 0, 0, 0.5);
     $red: #F1453D;
+    $color:#aaa;
     .wrapper {
         font-size: $font-size;
         display: inline-flex;
@@ -54,7 +54,7 @@
             border: 1px solid $border-color;
             border-radius: $border-radius;
             padding: 0 8px;
-            font-size: inherit;
+            font-size: $font-size;
             &:hover {
                 border-color: $border-color-hover;
             }
@@ -63,8 +63,8 @@
                 outline: none;
             }
             &[disabled], [readonly] {
-                border-color: #aaa;
-                color: #aaa;
+                border-color: $color;
+                color: $color;
                 cursor: not-allowed;
             }
         }
