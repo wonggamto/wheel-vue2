@@ -52,7 +52,7 @@
     .g-button {
         height: $button-height;
         padding: 0 1em;
-        font: inherit;
+        font: $font-size;
         border-radius: $border-radius;
         border: 1px solid $border-color;
         background: $button-bg;
