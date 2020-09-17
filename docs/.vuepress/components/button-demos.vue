@@ -4,9 +4,7 @@
         <g-button icon="setting">按钮2</g-button>
         <g-button :loading="true" icon-position="right">按钮3</g-button>
         <g-button disabled>按钮4</g-button>
-        <pre>
-            <code>{{content}}</code>
-        </pre>
+        <pre><code>{{content}}</code></pre>
     </div>
 </template>
 <script>
@@ -23,7 +21,7 @@
         <g-button icon="setting">按钮2</g-button>
         <g-button :loading="true" icon-position="right">按钮3</g-button>
         <g-button disabled>按钮4</g-button>
-        `
+        `.replace(/\t| +/g,"").trim()
       }
     }
   }
