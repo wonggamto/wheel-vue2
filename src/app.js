@@ -44,7 +44,7 @@ Vue.use(plugin)
 new Vue({
   el: '#app',
   data: {
-    selectedTab:['2','1']
+    selectedTab:['2','1'],
   },
   props:{
     value:{

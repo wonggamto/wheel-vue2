@@ -15,12 +15,12 @@ module.exports = {
         title:'组件',
         children:[
           '/components/button',
-          '/components/tabs',
           '/components/input',
-          '/components/grid',
-          '/components/layout',
-          '/components/toast',
-          '/components/popover',
+          '/components/tabs',
+          // '/components/grid',
+          // '/components/layout',
+          // '/components/toast',
+          // '/components/popover',
         ]
       }
     ]

@@ -23,6 +23,14 @@
         }
 
         #app {
+            --button-height: 32px;
+            --font-size: 14px;
+            --button-bg: white;
+            --button-active-bg: #eee;
+            --border-radius: 4px;
+            --color: #333;
+            --border-color: #999;
+            --border-color-hover: #666;
         }
 
         body {
@@ -45,6 +53,11 @@
     <g-tabs selected="true">bbb</g-tabs>
     <g-input v-model="value"></g-input>
     value:{{value}}
+    <g-button-group>
+    <g-button icon="left"></g-button>
+    <g-button disabled></g-button>
+    <g-button icon="right"></g-button>
+    </g-button-group>
 </div>
 <script src="./src/app.js"></script>
 </body>

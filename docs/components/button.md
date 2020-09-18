@@ -1,9 +1,6 @@
 ---
-title:按钮
+title: button | 按钮
 ---
 # 按钮
-使用方法
----
-<ClientOnly>
-    <button-demos></button-demos>
-</ClientOnly>
+
+<ClientOnly><button-demos></button-demos></ClientOnly>

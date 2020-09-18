@@ -15,6 +15,14 @@
     components:{
       'g-icon': Icon
     },
+    data(){
+        return{
+          disabled:{
+            type:Boolean,
+            default:false
+          }
+        }
+    },
     props: {
       icon: {},
       loading: {
@@ -27,7 +35,8 @@
         validator(iconPosition) {
           return !(iconPosition !== 'left' && iconPosition !== 'right');
         }
-      }
+      },
+
     }
   }
 </script>
@@ -73,6 +82,9 @@
             outline: none;
         }
 
+        &:disabled{
+            cursor: not-allowed;
+        }
         > .icon {
             order: 1;
             margin-left: 0;
