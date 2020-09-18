@@ -16,8 +16,8 @@ module.exports = {
         children:[
           '/components/button',
           '/components/input',
+          '/components/grid',
           '/components/tabs',
-          // '/components/grid',
           // '/components/layout',
           // '/components/toast',
           // '/components/popover',

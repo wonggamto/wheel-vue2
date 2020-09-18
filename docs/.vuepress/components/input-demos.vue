@@ -49,14 +49,6 @@
           icon_position:`
             <g-button icon="setting" icon-position="right">按钮</g-button>
           `.replace(/\t| +/g, " ").trim(),
-          button_group:
-            `
-            <g-button-group>
-                <g-button icon="left">左</g-button>
-                <g-button>中</g-button>
-                <g-button icon="right">右</g-button>
-           </g-button-group>
-          `.replace(/\t| +/g, " ").trim(),
         }
       }
     }
