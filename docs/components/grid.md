@@ -1,6 +1,6 @@
 ---
-title: tabs | 标签
+title: grid | 网格
 ---
-# 输入框
+# 网格
 
-<ClientOnly><tabs-demos></tabs-demos></ClientOnly>
+<ClientOnly><grids-demos></grids-demos></ClientOnly>
